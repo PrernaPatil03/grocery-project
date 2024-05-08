@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ordering App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript"> 
+        function preventBack() {
+          window.history.forward();
+        } setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+      </script>    
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
+            line-height: 1.8;
+            background-color:#6ca36d ;
+        
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .product-image {
+            width: 100%;
+            height:80%;
+            object-fit: cover;
+            margin-top: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 0px;
+        }
+
+        .product-details {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-description {
+            margin-top: 5px;
+        }
+
+        .product-price {
+            color:#3a6b35;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .quantity-label {
+            font-weight: bold;
+        }
+
+        .quantity-btn {
+            background-color:#3a6b35;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .quantity-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .remove-btn {
+            color: #dc3545;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .remove-btn:hover {
+            color: #a51e2d;
+        }
+
+        .empty-cart-btn,
+        .order-btn {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .total-amount {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color:black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <% include userheader.html %>
+    </div>
+
+    <div class="container">
+        <h2 class="text-center" style="color:whitesmoke;">Display cart details</h2>
+        <% usercartitems.forEach(function(usercartitem){ %>
+        <div class="product-card row">
+            <div class="col-md-4">
+                <!-- <div style="width: 300px; margin-left:50px;float: left;">
+                    <img class="product-image" src="/images/food2.jpg" style="width:400px;height:400px;"> -->
+                 <img class="product-image" src="/images/<%= usercartitem.product.image_url %>" alt="<%= usercartitem.product.name %>"> 
+            </div>
+            <div class="product-details col-md-8">
+                <div class="product-name"><%= usercartitem.product.name %></div>
+                <div class="product-description"><%= usercartitem.product.description %></div>
+                <div class="product-price">$<span class="price"><%= usercartitem.product.price %>/<%= usercartitem.product.product_unit %></span></div>
+                <div class="product-quantity">Quantity:  <span class="price"><%= usercartitem.cart.quantity %></span></div>
+                <form action='/login/removecartitem' method="Post">
+                    <button type="submit" name="cartid" value=<%=usercartitem.cart.id %> class="remove-btn">
+                        <i class="fa fa-trash"></i> Remove Item
+                    </button>
+                </form>
+            </div>
+        </div>
+        <% }) %>
+        <div class="total-amount text-center">
+            Total Amount: $<span id="totalAmount"><%= totalOrderAmount %></span>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <% if(count){ %>
+                <form action="/login/emptycart" method="POST">
+                    <button type="submit" name="cartid" class="btn btn-danger empty-cart-btn">Empty Cart</button>
+                </form>
+                <% } %>
+            </div>
+            <div class="col-md-6">
+                <% if(count){ %>
+                <form action='/order' method="Post">
+                    <button type="submit" name="cartid" class="btn order-btn" style="background-color: #3a6b35;color:white">Order</button>
+                </form>
+                <% } %>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function incrementQuantity(button, price) {
+            var quantityElement = button.parentElement.querySelector(".quantity");
+            var quantity = parseInt(quantityElement.textContent);
+            quantityElement.textContent = quantity + 1;
+            updateTotalPrice(price);
+        }
+
+        function decrementQuantity(button, price) {
+            var quantityElement = button.parentElement.querySelector(".quantity");
+            var quantity = parseInt(quantityElement.textContent);
+            if (quantity > 1) {
+                quantityElement.textContent = quantity - 1;
+                updateTotalPrice(-price);
+            }
+        }
+
+        function updateTotalPrice(price) {
+            var totalPriceElement = document.getElementById("totalAmount");
+            var totalAmount = parseFloat(totalPriceElement.textContent || 0);
+            totalAmount += price;
+            totalPriceElement.textContent = totalAmount.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>
