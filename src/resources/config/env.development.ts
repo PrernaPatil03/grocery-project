@@ -1,7 +1,7 @@
 export default {
     environment: 'development' || process.env.NODE_ENV,
     baseUrl: '',
-    session: process.env.SESSION || 'secret-boilerplate-token',
+    session: process.env.SESSION || 'secret-token',
     token: process.env.TOKEN || 'secret-jwt-token',
     database: {
         name: process.env.DB_NAME || 'example',

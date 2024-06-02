@@ -6,6 +6,7 @@ export class EncryptPassword {
     async encrpytPassword(password) {
         let saltRounds: number = 10;
         let salt = await bcrypt.genSalt(10);
+        console.log(password,'**************password******************')
         let encryptedpassword: string = await bcrypt.hash(password, salt);
         return encryptedpassword;
     }

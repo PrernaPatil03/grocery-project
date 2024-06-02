@@ -9,14 +9,13 @@ export class UserValidator {
                {
                     email: 'required|email',
                     phoneno: 'required|minLength:10|maxLength:12',
-                    name: 'required|minLength:3',
+                    name: 'required|minLength:2',
                     address: 'required|maxLength:400'
                }
           )
           const Validation = await valid.check()
           return Validation
      }
-
      async loginUser(ctx: Context) {
           const valid = new Validator(ctx.request.body,
                {

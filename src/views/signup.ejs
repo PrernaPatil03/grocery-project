@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <title>Ordering App</title>
+  <title>Grocery APP</title>
   <meta charset="utf-8">
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -32,68 +32,52 @@
       height: 100%;
       line-height: 1.8;
       overflow: hidden;
-      /* background-color: #ffcfdf;
-background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%); */
     }
 
     .signup_container {
       height: 470px;
       width: 370px;
-      /* padding:5px; */
       justify-content: center;
-      /* padding-left: 20vh; */
       align-items: center;
-      /* border-radius: 2px solid black; */
       background-color: #30302b;
-      /* border: 2px solid black; */
       border-radius: 2px;
       position: relative;
       box-shadow: 0 0 2px gray;
-
       top: 10vh;
       left: 15vh;
       z-index: 1;
       border-radius: 7%;
-
     }
 
     .form-group {
-      /* background: transparent; */
-      /* border:transparent; */
       color: white;
       width: 100%;
-      border-radius: none;
+      /* border-radius: none; */
     }
 
-    /* input[type="text"],
-  input[type="emial"],textarea{
-    width:100%;
-  } */
     .form-grid {
       width: 100%;
       display: grid;
       grid-template-rows: auto auto auto auto;
       align-items: center;
       grid-gap: 2px;
-
-
     }
-
-
 
     .btn {
       height: 7vh;
       width: 30vh;
       margin-left: 12vh;
       margin-top: 2vh;
-
       font-size: 18px;
       background-color: #3a6b35;
       color: whitesmoke;
       text-align: center;
       border-radius: 2px solid green;
+    }
 
-
+    .btn:hover {
+      background-color: #ffc300;
+      color: black;
     }
 
     .container {
@@ -107,33 +91,14 @@ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%); */
       padding: 0;
       margin: 0;
       position: absolute;
-
     }
 
     .form-control {
-      /* border:2px solid black; */
       width: 100%;
-      color: whitesmoke;
-      background-color: transparent;
+      color: black;
       font-size: 14px;
-      border: transparent;
-       border-bottom: 2px  solid whitesmoke; 
-      /* border-style:initial; */
-      /* border-style:ridge; */
+      border-radius: 3px;
     }
-
-    /* input[type="text"],
-  input[type="email"],
-  input[type="number"]{
-    width:100%; */
-
-    /* border:none; */
-    /* border-bottom:2px solid white;  */
-    /* box-sizing:border-box; */
-    /* color:white;
-    background-color: #30302b; */
-
-
 
     .form-container {
       height: 470px;
@@ -146,7 +111,6 @@ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%); */
       margin-right: 9px;
       display: grid;
       grid-template-rows: 15% 70% 15%;
-
     }
 
     /*navbar*/
@@ -168,37 +132,31 @@ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%); */
       justify-content: center;
       background-color: white;
       height: 70px;
-      /* padding 0 20px; */
     }
 
     .logo-container {
       display: flex;
-      /* align-items:center; */
     }
 
     .logo {
-      /* margin-left:4vh; */
       max-width: 55px;
       max-height: 55px;
     }
 
-    .menu-options ul li {
-      /* display: inline-block;
-  list-style-type: none;
-  margin: 10px 20px; */
+    nav ul li {
       margin: 20px;
     }
 
-    .menu-options ul li :last-child {
+    nav ul li :last-child {
       margin-right: 0;
     }
 
-    .menu-options ul li a {
+    nav ul li a {
       text-decoration: none;
     }
 
 
-    .menu-options ul {
+    nav ul {
       list-style-type: none;
       display: flex;
       margin: 0;
@@ -223,15 +181,8 @@ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%); */
       display: grid;
       align-items: center;
       justify-content: space-between;
-      /* flex-wrap: wrap; */
       grid-template-columns: 30% 70%;
       background-color: white;
-    }
-
-    nav ul li {
-      display: inline-block;
-      list-style-type: none;
-      margin: 10px 20px;
     }
 
     .sign-container {
@@ -255,35 +206,22 @@ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%); */
 
       <nav class="navbar">
         <div class="logo-container">
-          <!-- <a href="/index" style="color:#3a6b35;text-decoration: none;font-size:x-large;margin-left:6vh;"><strong>FreshCart</strong></a>
-           <a> <span style="max-height:50px; width:50" <img src="/images/FreshCart_Logo.jpg"/></span></a> -->
           <a href="/index"> <img src="/images/FreshCart_Logo.jpg" class="logo" />
             <span class="company-name"
               style="color:#3a6b35;text-decoration: none;font-size:18px;margin-right:80px;"><strong>FreshCart</strong></span>
           </a>
         </div>
-        <div class="menu-options">
-          <ul>
-            <!-- <a href="/index"><strong>FreshCart</strong></a> -->
-
-            <li><a href="/index/login"
-                style="text-decoration:none;color: green;padding-left:143vh; font-size: 16px; position: relative;padding-right:10px;"><strong>LOGIN</strong>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                  class="bi bi-box-arrow-in-right" viewBox="0 0 14 16">
-                  <path fill-rule="evenodd"
-                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
-                  <path fill-rule="evenodd"
-                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                </svg> </a></li>
-
-
-
-
-
-
-
-          </ul>
-        </div>
+        <ul>
+          <li><a href="/index/login"
+              style="text-decoration:none;color: green;padding-left:143vh; font-size: 16px; position: relative;padding-right:10px;"><strong>LOGIN</strong>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-box-arrow-in-right" viewBox="0 0 14 16">
+                <path fill-rule="evenodd"
+                  d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                <path fill-rule="evenodd"
+                  d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+              </svg> </a></li>
+        </ul>
       </nav>
 
     </div>
@@ -294,11 +232,6 @@ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%); */
           <%= message %>
         </div>
         <% } %>
-          <!-- <h1  style= "color: rgb(22, 111, 167); text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
-      <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-      <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-    </svg> Signup</h1> -->
-
           <form action="/signup/adduser" method="POST">
 
             <img src="/images/gross2.jpg" />
@@ -311,7 +244,8 @@ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%); */
                     <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                     <path fill-rule="evenodd"
                       d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                  </svg> Signup</h1>
+                  </svg> Signup
+                </h1>
                 <form>
                   <div class="form-grid">
                     <div class="form-group">
@@ -332,7 +266,7 @@ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%); */
                     </div>
                   </div>
 
-                  <button class="btn " type="submit">SignUp</button>
+                  <button class="btn" type="submit">SignUp</button>
                 </form>
               </div>
             </div>

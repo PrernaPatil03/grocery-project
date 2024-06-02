@@ -5,7 +5,7 @@ class MailGenerator {
     generateMail(userEmailId, password) {
         let fromMail = process.env.EMAIL;
         let toMail = userEmailId;
-        let subject = 'One Time Password shooping cart ';
+        let subject = 'One Time Password grocery cart ';
         let text = ` One Time Password is ${password} .Please update your password `
 
         const transporter = nodemailer.createTransport({
@@ -24,7 +24,7 @@ class MailGenerator {
         };
         transporter.sendMail(mailOptions, (error, response) => {
             if (error) {
-                console.log(error);
+                console.log(JSON.stringify(error));
             }
             console.log(response)
         });

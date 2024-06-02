@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ordering App</title>
+    <title>Grocery APP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript"> 
@@ -130,8 +130,6 @@
         <% usercartitems.forEach(function(usercartitem){ %>
         <div class="product-card row">
             <div class="col-md-4">
-                <!-- <div style="width: 300px; margin-left:50px;float: left;">
-                    <img class="product-image" src="/images/food2.jpg" style="width:400px;height:400px;"> -->
                  <img class="product-image" src="/images/<%= usercartitem.product.image_url %>" alt="<%= usercartitem.product.name %>"> 
             </div>
             <div class="product-details col-md-8">

@@ -15,7 +15,8 @@ export class Authentication {
                } else {
                      await ctx.render('signup', { message: "Please Enter Correct Details" });
                      }
-          } else {
+          }
+           else {
                return next();
           }
      }

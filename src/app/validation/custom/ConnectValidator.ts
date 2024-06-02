@@ -42,7 +42,7 @@ export class ConnectValidator {
         if (Object.keys(bookDetails).length === 0) {
             response.isValid = false
             response.status = httpConstants.HTTP_UNPROCESSABLE_ENTITY
-            response.data['error'] = 'Please provide book details to update'
+            // response.data['error'] = 'Please provide book details to update'
             return response
         }
 

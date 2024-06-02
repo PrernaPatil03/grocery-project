@@ -1,16 +1,16 @@
 import * as nodemailer from 'nodemailer';
 
 export default function generateMail(userEmailId,password){
-    let fromMail = 'patilpallavi059@gmail.com';
+    let fromMail = 'prernapatil060@gmail.com';
             let toMail = userEmailId;
-            let subject = 'One Time Password shooping cart ';
+            let subject = 'One Time Password  grocery shopping cart ';
             let text = ` Please update your password  One Time Password is ${password}`
 
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: 'patilpallavi059@gmail.com',
-                    pass: 'Pallavi05@#'
+                    user: 'prernapatil060@gmail.com',
+                    pass: 'Prerna2003@'
                 }
             });
             // email options
